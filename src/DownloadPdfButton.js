@@ -10,7 +10,6 @@ export function DownloadPdfButton() {
         onClick={() => {
           getCreatedPdf(details).then((result) => {
             console.log("Received", result);
-            var bytes = new Uint8Array(result.data);
             const linkSource = `data:application/pdf;base64,${result}`;
             const downloadLink = document.createElement("a");
             const fileName = "generated.pdf";
